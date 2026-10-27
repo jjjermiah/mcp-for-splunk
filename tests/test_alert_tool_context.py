@@ -4,9 +4,9 @@ from unittest.mock import AsyncMock, Mock
 
 import pytest
 
-from src.core.base import BaseTool
-from src.tools.alerts.alert_tool_context import AlertContextMixin
-from src.tools.alerts.update_alert import UpdateAlert
+from mcp_server_for_splunk.core.base import BaseTool
+from mcp_server_for_splunk.tools.alerts.alert_tool_context import AlertContextMixin
+from mcp_server_for_splunk.tools.alerts.update_alert import UpdateAlert
 
 
 class _StubAlertTool(AlertContextMixin, BaseTool):

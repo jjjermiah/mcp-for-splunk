@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock, Mock
 
 import pytest
 
-from src.tools.search.job_info import GetSearchJobInfo
+from mcp_server_for_splunk.tools.search.job_info import GetSearchJobInfo
 
 
 class TestJobInfoTool:

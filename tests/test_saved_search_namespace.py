@@ -4,7 +4,7 @@ from unittest.mock import Mock
 
 from splunklib import client as spl_client
 
-from src.tools.search.saved_search_tools import (
+from mcp_server_for_splunk.tools.search.saved_search_tools import (
     DEFAULT_SAVED_SEARCH_APP,
     _apply_saved_search_namespace,
     _namespace_for_saved_search_acl,

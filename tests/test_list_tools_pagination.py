@@ -4,10 +4,10 @@ from unittest.mock import AsyncMock, Mock
 
 import pytest
 
-from src.core.list_paging import PaginationError
-from src.tools.admin.apps import ListApps
-from src.tools.admin.users import ListUsers
-from src.tools.metadata.indexes import ListIndexes
+from mcp_server_for_splunk.core.list_paging import PaginationError
+from mcp_server_for_splunk.tools.admin.apps import ListApps
+from mcp_server_for_splunk.tools.admin.users import ListUsers
+from mcp_server_for_splunk.tools.metadata.indexes import ListIndexes
 
 
 class _Body:

@@ -6,7 +6,7 @@ from typing import Any
 
 import pytest
 
-from src.tools.admin.tool_enhancer import ToolDescriptionEnhancer
+from mcp_server_for_splunk.tools.admin.tool_enhancer import ToolDescriptionEnhancer
 
 
 class TestToolDescriptionEnhancer:

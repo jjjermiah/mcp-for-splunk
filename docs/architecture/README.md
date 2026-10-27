@@ -37,26 +37,27 @@ This section provides comprehensive technical documentation about the MCP Server
 
 ```
 src/
-├── core/                 # Core framework
-│   ├── base.py          # Base classes and interfaces
-│   ├── discovery.py     # Automatic component discovery
-│   ├── registry.py      # Component registration
-│   └── loader.py        # Dynamic loading into FastMCP
-│
-├── tools/               # Core tools (project-maintained)
-│   ├── search/          # Search and analytics tools
-│   ├── metadata/        # Data discovery tools
-│   ├── admin/           # Administration tools
-│   ├── kvstore/         # KV Store operations
-│   └── health/          # System monitoring tools
-│
-├── resources/           # Information resources
-│   ├── splunk_config.py # Configuration access
-│   ├── splunk_docs.py   # Documentation resources
-│   └── processors/      # Content processing
-│
-├── prompts/            # Reusable prompt templates
-└── client/             # Splunk client abstraction
+└── mcp_server_for_splunk/  # Importable package
+    ├── core/                 # Core framework
+    │   ├── base.py          # Base classes and interfaces
+    │   ├── discovery.py     # Automatic component discovery
+    │   ├── registry.py      # Component registration
+    │   └── loader.py        # Dynamic loading into FastMCP
+    │
+    ├── tools/               # Core tools (project-maintained)
+    │   ├── search/          # Search and analytics tools
+    │   ├── metadata/        # Data discovery tools
+    │   ├── admin/           # Administration tools
+    │   ├── kvstore/         # KV Store operations
+    │   └── health/          # System monitoring tools
+    │
+    ├── resources/           # Information resources
+    │   ├── splunk_config.py # Configuration access
+    │   ├── splunk_docs.py   # Documentation resources
+    │   └── processors/      # Content processing
+    │
+    ├── prompts/            # Reusable prompt templates
+    └── client/             # Splunk client abstraction
 
 contrib/                # Community contributions
 ├── tools/              # Community-contributed tools
@@ -68,7 +69,7 @@ contrib/                # Community contributions
 
 ### Tool Discovery and Loading
 
-1. **Scan Phase**: Discover all Python modules in `src/tools/` and `contrib/tools/`
+1. **Scan Phase**: Discover all Python modules in `src/mcp_server_for_splunk/tools/` and `contrib/tools/`
 2. **Registration Phase**: Register tools with metadata validation
 3. **Loading Phase**: Dynamically load into FastMCP server
 4. **Runtime Phase**: Tools available for MCP client invocation

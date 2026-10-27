@@ -505,8 +505,8 @@ from typing import Any, Dict
 
 from fastmcp import Context
 from splunklib.results import ResultsReader
-from src.core.base import BaseTool, ToolMetadata
-from src.core.utils import log_tool_execution, sanitize_search_query
+from mcp_server_for_splunk.core.base import BaseTool, ToolMetadata
+from mcp_server_for_splunk.core.utils import log_tool_execution, sanitize_search_query
 
 
 class {info["class_name"]}(BaseTool):
@@ -655,9 +655,7 @@ def generate_tool_file(info: dict[str, str]) -> str:
                     param_type
                 ]
 
-            type_hint = {"str": "str", "int": "int", "bool": "bool", "float": "float"}[
-                param_type
-            ]
+            type_hint = {"str": "str", "int": "int", "bool": "bool", "float": "float"}[param_type]
 
             param_parts.append(f"{param_name}: {type_hint} = {param_default}")
             doc_parts.append(f"            {param_name}: {param['description']}")
@@ -677,8 +675,8 @@ from typing import Any, Dict
 
 from fastmcp import Context
 
-from src.core.base import BaseTool, ToolMetadata
-from src.core.utils import log_tool_execution
+from mcp_server_for_splunk.core.base import BaseTool, ToolMetadata
+from mcp_server_for_splunk.core.utils import log_tool_execution
 
 
 class {info["class_name"]}(BaseTool):
@@ -1135,9 +1133,7 @@ def main():
                 print("  5) Add to registry if needed")
             else:
                 print("  4) (Optional) Create tests later and run them with:")
-                print(
-                    f"     pytest tests/contrib/{info['category']}/test_{info['snake_name']}.py"
-                )
+                print(f"     pytest tests/contrib/{info['category']}/test_{info['snake_name']}.py")
                 print("  5) Add to registry if needed")
 
         else:

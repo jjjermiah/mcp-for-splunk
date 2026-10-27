@@ -65,9 +65,7 @@ def _spawn(cmd: list[str], env: dict[str, str], log_path: Path):
             try:
                 os.killpg(proc.pid, signal.SIGINT)
             except ProcessLookupError:
-                logger.debug(
-                    "Process group %s already exited before SIGINT", proc.pid
-                )
+                logger.debug("Process group %s already exited before SIGINT", proc.pid)
             try:
                 proc.wait(timeout=10)
             except subprocess.TimeoutExpired:
@@ -155,7 +153,7 @@ def main() -> int:
             "uv",
             "run",
             "python",
-            "src/server.py",
+            "src/mcp_server_for_splunk/server.py",
             "--host",
             "127.0.0.1",
             "--port",

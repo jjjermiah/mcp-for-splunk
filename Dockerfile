@@ -61,4 +61,4 @@ EXPOSE 8001
 USER mcp
 
 # Run the MCP server using uv with enhanced hot reload support
-CMD ["sh", "-c", "echo 'Starting modular MCP server (src/server.py)'; if [ \"$MCP_HOT_RELOAD\" = \"true\" ]; then echo 'Starting with enhanced hot reload...'; uv run watchmedo auto-restart --directory=./src --directory=./contrib --pattern=*.py --recursive --ignore-patterns='*/__pycache__/*;*.pyc;*.pyo;*/.pytest_cache/*' -- python -u src/server.py; else echo 'Starting in production mode...'; uv run python src/server.py; fi"]
+CMD ["sh", "-c", "echo 'Starting modular MCP server (src/mcp_server_for_splunk/server.py)'; if [ \"$MCP_HOT_RELOAD\" = \"true\" ]; then echo 'Starting with enhanced hot reload...'; uv run watchmedo auto-restart --directory=./src --directory=./contrib --pattern=*.py --recursive --ignore-patterns='*/__pycache__/*;*.pyc;*.pyo;*/.pytest_cache/*' -- python -u src/mcp_server_for_splunk/server.py; else echo 'Starting in production mode...'; uv run python src/mcp_server_for_splunk/server.py; fi"]

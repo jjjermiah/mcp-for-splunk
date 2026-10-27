@@ -23,7 +23,7 @@ class TestHealthEndpointSecurity:
         """Health endpoint should expose only benign, non-sensitive information."""
         import httpx
 
-        from src.server import create_root_app, get_mcp
+        from mcp_server_for_splunk.server import create_root_app, get_mcp
 
         mcp = get_mcp()
         app = create_root_app(mcp)
@@ -81,7 +81,7 @@ class TestHealthEndpointSecurity:
         """Health endpoint should work without any authentication."""
         import httpx
 
-        from src.server import create_root_app, get_mcp
+        from mcp_server_for_splunk.server import create_root_app, get_mcp
 
         mcp = get_mcp()
         app = create_root_app(mcp)
@@ -109,7 +109,7 @@ class TestMalformedRequestHandling:
         """Very long SPL strings should not cause crashes or expose errors."""
         import httpx
 
-        from src.server import create_root_app, get_mcp
+        from mcp_server_for_splunk.server import create_root_app, get_mcp
 
         mcp = get_mcp()
         app = create_root_app(mcp)
@@ -158,7 +158,7 @@ class TestMalformedRequestHandling:
         """Invalid JSON should return error without exposing internals."""
         import httpx
 
-        from src.server import create_root_app, get_mcp
+        from mcp_server_for_splunk.server import create_root_app, get_mcp
 
         mcp = get_mcp()
         app = create_root_app(mcp)
@@ -195,7 +195,7 @@ class TestMalformedRequestHandling:
         """Special characters in queries should be handled safely."""
         import httpx
 
-        from src.server import create_root_app, get_mcp
+        from mcp_server_for_splunk.server import create_root_app, get_mcp
 
         mcp = get_mcp()
         app = create_root_app(mcp)
@@ -252,7 +252,7 @@ class TestErrorResponseSanitization:
         """Error responses should not contain Python stack traces."""
         import httpx
 
-        from src.server import create_root_app, get_mcp
+        from mcp_server_for_splunk.server import create_root_app, get_mcp
 
         mcp = get_mcp()
         app = create_root_app(mcp)
@@ -297,7 +297,7 @@ class TestErrorResponseSanitization:
         """Error responses should not expose internal file paths."""
         import httpx
 
-        from src.server import create_root_app, get_mcp
+        from mcp_server_for_splunk.server import create_root_app, get_mcp
 
         mcp = get_mcp()
         app = create_root_app(mcp)
@@ -344,7 +344,7 @@ class TestErrorResponseSanitization:
         """Error responses should not contain secrets or credentials."""
         import httpx
 
-        from src.server import create_root_app, get_mcp
+        from mcp_server_for_splunk.server import create_root_app, get_mcp
 
         mcp = get_mcp()
         app = create_root_app(mcp)
@@ -398,7 +398,7 @@ class TestRequestRateLimiting:
 
         import httpx
 
-        from src.server import create_root_app, get_mcp
+        from mcp_server_for_splunk.server import create_root_app, get_mcp
 
         mcp = get_mcp()
         app = create_root_app(mcp)

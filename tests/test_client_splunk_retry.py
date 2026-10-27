@@ -6,12 +6,12 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from src.client.splunk_client import get_splunk_service
+from mcp_server_for_splunk.client.splunk_client import get_splunk_service
 
 
 class TestSplunkConnectRetry:
-    @patch("src.client.splunk_client.time.sleep")
-    @patch("src.client.splunk_client.client.connect")
+    @patch("mcp_server_for_splunk.client.splunk_client.time.sleep")
+    @patch("mcp_server_for_splunk.client.splunk_client.client.connect")
     def test_retries_transient_failures(self, mock_connect, mock_sleep):
         mock_service = Mock()
         mock_connect.side_effect = [OSError("Connection reset by peer"), mock_service]
@@ -32,12 +32,10 @@ class TestSplunkConnectRetry:
         assert mock_connect.call_count == 2
         mock_sleep.assert_called_once_with(2.0)
 
-    @patch("src.client.splunk_client.time.sleep")
-    @patch("src.client.splunk_client.client.connect")
+    @patch("mcp_server_for_splunk.client.splunk_client.time.sleep")
+    @patch("mcp_server_for_splunk.client.splunk_client.client.connect")
     def test_does_not_retry_network_unreachable(self, mock_connect, mock_sleep):
-        mock_connect.side_effect = OSError(
-            errno.ENETUNREACH, "Network is unreachable"
-        )
+        mock_connect.side_effect = OSError(errno.ENETUNREACH, "Network is unreachable")
 
         with patch.dict(
             os.environ,
@@ -55,8 +53,8 @@ class TestSplunkConnectRetry:
         assert mock_connect.call_count == 1
         mock_sleep.assert_not_called()
 
-    @patch("src.client.splunk_client.time.sleep")
-    @patch("src.client.splunk_client.client.connect")
+    @patch("mcp_server_for_splunk.client.splunk_client.time.sleep")
+    @patch("mcp_server_for_splunk.client.splunk_client.client.connect")
     def test_raises_after_exhausting_retries(self, mock_connect, mock_sleep):
         mock_connect.side_effect = OSError("Name or service not known")
 
@@ -76,7 +74,7 @@ class TestSplunkConnectRetry:
         assert mock_connect.call_count == 2
         mock_sleep.assert_called_once_with(1.0)
 
-    @patch("src.client.splunk_client.client.connect")
+    @patch("mcp_server_for_splunk.client.splunk_client.client.connect")
     def test_success_on_first_attempt_skips_sleep(self, mock_connect):
         mock_service = Mock()
         mock_connect.return_value = mock_service

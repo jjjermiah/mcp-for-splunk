@@ -1,7 +1,7 @@
 from fastmcp import FastMCP
 from starlette.applications import Starlette
 
-from src.server import create_root_app, get_mcp
+from mcp_server_for_splunk.server import create_root_app, get_mcp
 
 
 def test_get_mcp_returns_fastmcp():

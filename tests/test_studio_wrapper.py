@@ -2,7 +2,7 @@
 
 import json
 
-from src.tools.dashboards.studio_wrapper import (
+from mcp_server_for_splunk.tools.dashboards.studio_wrapper import (
     DashboardDefinitionPreparer,
     StudioDashboardWrapper,
     StudioThemeResolver,

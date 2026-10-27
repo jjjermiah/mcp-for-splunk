@@ -7,7 +7,7 @@ Index access and subsearches are handled by Splunk RBAC.
 
 import pytest
 
-from src.core.security import (
+from mcp_server_for_splunk.core.security import (
     QuerySecurityError,
     SecurityViolationType,
     SPLQueryValidator,

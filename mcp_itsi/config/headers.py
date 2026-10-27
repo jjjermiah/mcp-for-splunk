@@ -15,7 +15,7 @@ from dataclasses import dataclass, field
 
 from mcp_itsi.config.settings import ITSIServerSettings
 from mcp_itsi.config.tls_policy import TLSVerificationPolicy
-from src.core.utils import _is_dai_session_bearer
+from mcp_server_for_splunk.core.utils import _is_dai_session_bearer
 
 logger = logging.getLogger(__name__)
 

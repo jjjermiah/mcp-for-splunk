@@ -314,7 +314,7 @@ The companion `mcp_itsi` server (standalone or plugin — see [🛡️ ITSI MCP 
   "mcpServers": {
     "splunk": {
       "command": "fastmcp",
-      "args": ["run", "/path/to/src/server.py"],
+      "args": ["run", "/path/to/src/mcp_server_for_splunk/server.py"],
       "env": {
         "MCP_SPLUNK_HOST": "your-splunk.com",
         "MCP_SPLUNK_USERNAME": "your-user"
@@ -370,7 +370,7 @@ splunk_agent = LlmAgent(
     model='gemini-2.0-flash',
     tools=[MCPToolset(connection_params=StdioServerParameters(
         command='fastmcp',
-        args=['run', '/path/to/src/server.py']
+        args=['run', '/path/to/src/mcp_server_for_splunk/server.py']
     ))]
 )
 ```

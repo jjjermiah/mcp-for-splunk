@@ -2,7 +2,7 @@ import asyncio
 
 import pytest
 
-from src.core.splunk_job_wait import resolve_search_wait_seconds, wait_for_job
+from mcp_server_for_splunk.core.splunk_job_wait import resolve_search_wait_seconds, wait_for_job
 
 
 class _Job:

@@ -27,7 +27,7 @@ def _run_server_env_probe(cwd: Path, extra_env: dict[str, str] | None = None) ->
     script = """
 import json
 import os
-from src.server import LOG_LEVEL_NAME, extract_client_config_from_env
+from mcp_server_for_splunk.server import LOG_LEVEL_NAME, extract_client_config_from_env
 
 print(json.dumps({
     "log_level": LOG_LEVEL_NAME,
